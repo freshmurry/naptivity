@@ -1,1 +1,0 @@
-This is my AirBnB Clone project base off of what I learned in Code4Startup.
