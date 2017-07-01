@@ -10,7 +10,7 @@ development:
   database: project_development
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
 
 test: &TEST
@@ -19,7 +19,7 @@ test: &TEST
   database: project_test
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
 
 production:
@@ -28,7 +28,7 @@ production:
   database: project_production
   pool: 5
   timeout: 5000
-  username: 
+  username:
   password:
 
 cucumber:
