@@ -23,7 +23,7 @@ test: &TEST
   password:
 
 production:
-  adapter: postgresql
+  adapter: pg
   encoding: utf8
   database: project_production
   pool: 5
@@ -33,6 +33,13 @@ production:
 
 cucumber:
   <<: *TEST
+  
+default: &default
+  adapter: pg
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
 
 production:
   url:  <%= ENV["DATABASE_URL"] %>

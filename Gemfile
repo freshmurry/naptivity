@@ -46,5 +46,8 @@ gem 'tzinfo-data'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-	gem 'puma'
 end
+
+# if ENV['RAILS_ENV'] == 'production'
+#   gem 'puma', '~> 3.8'
+# end
