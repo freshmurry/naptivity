@@ -179,9 +179,11 @@ GEM
     protected_attributes (1.1.4)
       activemodel (>= 4.0.1, < 5.0)
     public_suffix (2.0.5)
+    puma (3.9.1)
     rack (1.6.8)
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-timeout (0.4.2)
     rails (4.2.6)
       actionmailer (= 4.2.6)
       actionpack (= 4.2.6)
@@ -294,6 +296,8 @@ DEPENDENCIES
   pg
   private_pub
   protected_attributes
+  puma
+  rack-timeout
   rails (= 4.2.6)
   rails_12factor
   railties (~> 4.2, >= 4.2.6)
@@ -313,4 +317,4 @@ RUBY VERSION
    ruby 2.3.4p301
 
 BUNDLED WITH
-   1.15.0
+   1.15.1

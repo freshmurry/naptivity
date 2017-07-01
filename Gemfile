@@ -31,6 +31,7 @@ gem 'railties', '~> 4.2', '>= 4.2.6'
 gem 'stripe'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'protected_attributes'
+gem 'rack-timeout'
 
 group :development, :development do
   gem 'sqlite3', '1.3.13'
@@ -45,4 +46,5 @@ gem 'tzinfo-data'
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
+	gem 'puma'
 end

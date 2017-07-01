@@ -9,6 +9,7 @@ development:
   encoding: utf8
   database: project_development
   pool: 5
+  timeout: 5000
   username: 
   password:
 
@@ -17,6 +18,7 @@ test: &TEST
   encoding: utf8
   database: project_test
   pool: 5
+  timeout: 5000
   username: 
   password:
 
@@ -25,8 +27,17 @@ production:
   encoding: utf8
   database: project_production
   pool: 5
+  timeout: 5000
   username: 
   password:
 
 cucumber:
   <<: *TEST
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+  
+on_worker_boot do:
+  # Valid on Rails 4.1+ using the `config/database.yml` method of setting `pool` size
+  ActiveRecord::Base.establish_connection
