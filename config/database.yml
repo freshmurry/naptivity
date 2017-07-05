@@ -33,17 +33,10 @@ production:
 
 cucumber:
   <<: *TEST
-  
-default: &default
-  adapter: pg
-  encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
 
-production:
-  url:  <%= ENV["DATABASE_URL"] %>
-  pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+# production:
+#   url:  <%= ENV["DATABASE_URL"] %>
+#   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
   
 on_worker_boot do:
   # Valid on Rails 4.1+ using the `config/database.yml` method of setting `pool` size
