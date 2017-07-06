@@ -160,8 +160,9 @@
             height: 400px;
           }
         </style>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAYa7lGIhr1oTJwbCxJDrujV1ds6-9L3U"></script>
+				
+				<!-- Google Maps API -->	
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtvppog68W10OO0iyHnT9GvpmBPJUDH2U"></script>
         <script>
           function initialize() {
             var mapCanvas = document.getElementById('map');
@@ -183,7 +184,7 @@
       </div>
     </div>
 
-    <!-- CLose by Rooms -->
+    <!-- Close by Rooms -->
     <h3>More places near by</h3>
     <div class="row">
       <% for room in @room.nearbys(10) %>
