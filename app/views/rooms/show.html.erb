@@ -34,7 +34,7 @@
                 <i class="fa fa-bed fa-2x"></i>
               </div>
               <div class="col-sm-3">
-                <i class="fa fa-bath fa-2x"></i>
+                <i class="fa fa-bath fa-2x" aria-hidden="true"></i>
               </div>
             </div>
 
@@ -82,13 +82,11 @@
               <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
               <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
               <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
-            </ul>
           </div>
           <div class="col-md-6">
-            <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
               <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
-            </ul>  
+            </ul>
           </div>
         </div>
       </div>
