@@ -4,23 +4,18 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-development:
+default: &default
   adapter: sqlite3
-  encoding: utf8
-  database: project_development
   pool: 5
   timeout: 5000
-  username:
-  password:
+  
+development:
+  <<: *default
+  database: db/development.sqlite3
 
 test: &TEST
-  adapter: sqlite3
-  encoding: utf8
-  database: project_test
-  pool: 5
-  timeout: 5000
-  username:
-  password:
+  <<: *default
+  database: db/test.sqlite3
 
 production:
   adapter: pg
@@ -28,16 +23,3 @@ production:
   database: project_production
   pool: 5
   timeout: 5000
-  username:
-  password:
-
-cucumber:
-  <<: *TEST
-
-# production:
-#   url:  <%= ENV["DATABASE_URL"] %>
-#   pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
-  
-on_worker_boot do:
-  # Valid on Rails 4.1+ using the `config/database.yml` method of setting `pool` size
-  ActiveRecord::Base.establish_connection
