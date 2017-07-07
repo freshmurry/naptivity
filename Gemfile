@@ -19,7 +19,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'toastr-rails'
-gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
+gem 'paperclip', '4.3.6'
 gem 'geocoder'
 gem 'private_pub'
 gem 'thin'
@@ -48,7 +48,3 @@ group :production do
 	gem 'pg'
 	gem 'rails_12factor'
 end
-
-# if ENV['RAILS_ENV'] == 'production'
-#   gem 'puma', '~> 3.8'
-# end
