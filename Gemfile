@@ -22,7 +22,7 @@ gem 'toastr-rails'
 gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 gem 'geocoder'
 gem 'private_pub'
-# gem 'thin'
+gem 'thin'
 gem "font-awesome-rails"
 gem 'faye-websocket'
 gem "ransack"
