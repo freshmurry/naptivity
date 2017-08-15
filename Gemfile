@@ -13,7 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'sass-rails', '>= 3.2'
+gem 'sass-rails', '~> 5.0'
 gem 'devise', '~> 3'
 gem 'omniauth'
 gem 'omniauth-facebook'
@@ -27,7 +27,7 @@ gem "font-awesome-rails"
 gem 'faye-websocket'
 gem "ransack"
 gem 'jquery-ui-rails'
-gem 'aws-sdk', '>= 2.0.0'
+gem 'aws-sdk', '< 2.0'
 gem 'railties', '~> 4.2', '>= 4.2.6'
 gem 'stripe'
 gem 'dotenv-rails', :groups => [:development, :test]
