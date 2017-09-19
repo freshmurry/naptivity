@@ -1,7 +1,7 @@
 class CreateRooms < ActiveRecord::Migration
   def change
       create_table :rooms do |t|
-      t.string :home_type
+      t.string :dorm_type
       t.string :room_type
       t.integer :accommodate
       t.integer :bed_room
@@ -14,6 +14,11 @@ class CreateRooms < ActiveRecord::Migration
       t.boolean :is_air
       t.boolean :is_heating
       t.boolean :is_internet
+      t.boolean :is_fridge
+      t.boolean :is_laundry
+      t.boolean :is_beer
+      t.boolean :is_gym
+      t.boolean :is_wifi
       t.integer :price
       t.boolean :active
       t.references :user, index: true, foreign_key: true

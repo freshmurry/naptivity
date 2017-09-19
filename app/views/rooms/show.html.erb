@@ -40,13 +40,13 @@
 
             <div class="row text-center">
               <div class="col-sm-3">
-                <%= @room.home_type %>
+                <%= @room.dorm_type %>
               </div>
               <div class="col-sm-3">
                 <%= @room.accommodate %> <%= @room.accommodate > 1? "Guests" : "Guest" %>
               </div>
               <div class="col-sm-3">
-                <%= @room.bed_room %> <%= @room.bed_room > 1? "Bedrooms" : "Bedroom" %>
+                <%= @room.bed_room %> <%= @room.bed_room > 1? "Beds" : "Beds" %>
               </div>
               <div class="col-sm-3">
                 <%= @room.bath_room %> <%= @room.bath_room > 1? "Bathrooms" : "Bathroom" %>
@@ -79,15 +79,21 @@
       </div>
       <div class="col-md-10">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_tv %>">TV</li>
-              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
+              <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchenette</li>
               <li class="<%= 'text-line-through' if !@room.is_internet %>">Internet</li>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
               <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
               <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@room.is_fridge %>">Fridge</li>
+          </div>
+          <div class="col-md-4">
+              <li class="<%= 'text-line-through' if !@room.is_laundry %>">Laundry Facility</li>
+              <li class="<%= 'text-line-through' if !@room.is_beer %>">Free Beer</li>
+              <li class="<%= 'text-line-through' if !@room.is_wifi %>">Wifi</li>
             </ul>  
           </div>
         </div>

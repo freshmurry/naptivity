@@ -1,3 +1,9 @@
+<div id="container">
+  <div class="row">
+    <h1><h1>
+  </div>
+</div>
+
 <div id="wrapper">
 
   <div id="sidebar">
@@ -54,13 +60,19 @@
           
           <div class="row">
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Single Occupancy (Entire)
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy (Entire)
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite Style (Entire)
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy (Shared/Roommate)
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite/Penthouse Style (Shared/Roommate)
             </div>
           </div>
 
@@ -76,7 +88,7 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <label>Bedrooms</label>
+                <label>Beds</label>
                 <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]] %>
               </div>
             </div>
@@ -84,7 +96,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label>Bathrooms</label>
-                <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]] %>
+                <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3+", 3]] %>
               </div>
             </div>
           </div>
@@ -96,7 +108,7 @@
               <%= check_box_tag "q[is_tv_eq", true %> TV
             </div>
             <div class="col-md-4">
-                <%= check_box_tag "q[is_kitchen_eq", true %> Kitchen
+                <%= check_box_tag "q[is_kitchen_eq", true %> Kitchenette
               </div>
               <div class="col-md-4">
                 <%= check_box_tag "q[is_internet_eq", true %> Internet
@@ -106,6 +118,18 @@
               </div>
               <div class="col-md-4">
                 <%= check_box_tag "q[is_air_eq", true %> Air Conditioning
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_fridge_eq", true %> Fridge
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_laundry_eq", true %> Laundry Facility
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_beer_eq", true %> Free Beer
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_wifi_eq", true %> Free Wifi
               </div>
           </div>
 
@@ -145,7 +169,7 @@
 <script>
   $(function() {
     $("#start_date").datepicker({
-      dateFormat: 'dd-mm-yy',
+      dateFormat: 'mm-dd-yy',
       minDate: 0,
       maxDate: '3m',
       onSelect: function(selected) {
@@ -154,7 +178,7 @@
       }
     });
     $("#end_date").datepicker({
-      dateFormat: 'dd-mm-yy',
+      dateFormat: 'mm-dd-yy',
       minDate: 0,
       maxDate: '3m',
       onSelect: function(selected) {

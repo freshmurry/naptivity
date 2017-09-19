@@ -1,6 +1,6 @@
 <div class="panel panel-default">
   <div class="panel-heading">
-    Create your beautiful place
+    Create your beautiful space
   </div>
   <div class="panel-body">
     <div class="container">
@@ -10,15 +10,18 @@
         <div class="row">
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Home Type</label>
-              <%= f.select :home_type, [["Apartment","Apartment"], ["Loft", "Loft"], ["Condo", "Condo"], ["House", "House"], ["Bed & Breakfast", "Bed & Breakfast"]], id:"home_type", prompt: "Select...", class: "form-control" %>
+              <label>Dorm Type</label>
+              <%= f.select :dorm_type, [["Men","Men"], ["Women", "Women"], ["Co-Ed", "Co-Ed"], 
+              ["Co-Ed/ Men Floor", "Co-Ed/ Men Floor"], ["Co-Ed/ Ladies Floor", "Co-Ed/ Ladies Floor"]], id:"dorm_type", prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Room Type</label>
-              <%= f.select :room_type, [["Entire","Entire"], ["Private", "Private"], ["Shared", "Shared"]], prompt: "Select...", class: "form-control" %>
+              <label>Dorm Room Layout</label>
+              <%= f.select :room_type, [["Single Occupancy (Entire)","Single Occupancy (Entire)"], ["Double Occupancy (Entire)", "Double Occupancy (Entire)"], 
+              ["Suite/Penthouse Style (Entire)", "Suite/Penthouse Style (Entire)"], ["Double Occupancy (Entire)", "Double Occupancy (Entire)"], 
+              ["Suite/Penthouse Style (Shared/ Roommate)", "Suite/Penthouse Style (Shared/ Roommate)"]], prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
@@ -33,7 +36,7 @@
         <div class="row">
           <div class="col-md-4 select">
             <div class="form-group">
-              <label>Bedrooms</label>
+              <label>Beds</label>
               <%= f.select :bed_room, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]], promp: "Select...", class: "form-control" %>
             </div>
           </div>
@@ -86,6 +89,20 @@
             </div>
             <div class="form-group">
               <%= f.check_box :is_air %> Air Conditioning
+            </div>
+            <div class="form-group">
+              <%= f.check_box :is_fridge %> Fridge
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <%= f.check_box :is_laundry %> Laundry Facility
+            </div>
+            <div class="form-group">
+              <%= f.check_box :is_beer %> Free Beer
+            </div>
+            <div class="form-group">
+              <%= f.check_box :is_wifi %> Free Wifi
             </div>
           </div>
         </div>

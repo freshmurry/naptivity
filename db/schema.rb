@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20170705184523) do
   add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
 
   create_table "rooms", force: :cascade do |t|
-    t.string   "home_type"
+    t.string   "dorm_type"
     t.string   "room_type"
     t.integer  "accommodate"
     t.integer  "bed_room"
@@ -84,13 +84,16 @@ ActiveRecord::Schema.define(version: 20170705184523) do
     t.boolean  "is_air"
     t.boolean  "is_heating"
     t.boolean  "is_internet"
+    t.boolean  "is_fridge"
+    t.boolean  "is_laundry"
+    t.boolean  "is_beer"
+    t.boolean  "is_gym"
+    t.boolean  "is_wifi"
     t.integer  "price"
     t.boolean  "active"
     t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "rooms", ["user_id"], name: "index_rooms_on_user_id"
