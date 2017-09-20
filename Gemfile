@@ -30,9 +30,6 @@ gem 'jquery-ui-rails'
 gem 'aws-sdk', '< 2.0'
 gem 'railties', '~> 4.2', '>= 4.2.6'
 gem 'stripe'
-gem 'dotenv-rails', :groups => [:development, :test]
-gem 'protected_attributes'
-gem 'rack-timeout'
 
 group :development, :development do
   gem 'sqlite3', '1.3.13'

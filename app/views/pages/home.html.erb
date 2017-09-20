@@ -18,8 +18,8 @@
 <br>
 
 <div class="text-center">
-	<h2>Just for the weekend</h2>
-	<p>Discover new and inspiring dorm rooms on college campus' around the world.</p>
+	<h2>Just for the night or the weekend</h2>
+	<p>Discover and share your dorm room to campus visitors from around the world.</p>
 </div>
 
 <br>
@@ -80,7 +80,9 @@
 				</div>
 				<div class="panel-body">
 					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
-					<%= link_to room.listing_name, room %>
+					<%= link_to room.listing_name, room %><hr>
+					$<%= room.price %>/Night | 
+					<%= room.room_type %> Room
 				</div>
 			</div>
 		</div>
