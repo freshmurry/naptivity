@@ -20,8 +20,8 @@
             <div class="form-group">
               <label>Dorm Room Layout</label>
               <%= f.select :room_type, [["Single Occupancy (Entire)","Single Occupancy (Entire)"], ["Double Occupancy (Entire)", "Double Occupancy (Entire)"], 
-              ["Suite/Penthouse Style (Entire)", "Suite/Penthouse Style (Entire)"], ["Double Occupancy (Entire)", "Double Occupancy (Entire)"], 
-              ["Suite/Penthouse Style (Shared/ Roommate)", "Suite/Penthouse Style (Shared/ Roommate)"]], prompt: "Select...", class: "form-control" %>
+              ["Suite/Penthouse Style (Entire)", "Suite/Penthouse Style (Entire)"], ["Double Occupancy (Shared/Roommate)", "Double Occupancy (Shared/Roommate)"], 
+              ["Suite/Penthouse Style (Shared/Roommate)", "Suite/Penthouse Style (Shared/Roommate)"]], prompt: "Select...", class: "form-control" %>
             </div>
           </div>
 
@@ -59,14 +59,14 @@
         <div class="row">
           <div class="form-group">
             <label>Summary</label>
-            <%= f.text_area :summary, rows: 5, placeholder: "Tell about your house", class: "form-control" %>
+            <%= f.text_area :summary, rows: 5, placeholder: "Tell about your dorm room", class: "form-control" %>
           </div>
         </div>
 
         <div class="row">
           <div class="form-group">
             <label>Address</label>
-            <%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+            <%= f.text_field :address, placeholder: "What is your dorm building address?", class: "form-control" %>
           </div>
         </div>
 
@@ -102,7 +102,7 @@
               <%= f.check_box :is_beer %> Free Beer
             </div>
             <div class="form-group">
-              <%= f.check_box :is_wifi %> Free Wifi
+              <%= f.check_box :is_wifi %> Guest Wifi Access
             </div>
           </div>
         </div>
