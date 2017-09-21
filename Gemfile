@@ -33,6 +33,7 @@ gem 'stripe'
 
 group :development, :development do
   gem 'byebug', '>= 4.2.6'
+  gem "capistrano", "~> 3.9"
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'sqlite3'
