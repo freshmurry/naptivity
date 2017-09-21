@@ -278,7 +278,7 @@ DEPENDENCIES
   omniauth
   omniauth-facebook
   paperclip (= 4.3.6)
-  pg (~> 0.20.0)
+  pg
   private_pub
   rails (= 4.2.6)
   rails_12factor
