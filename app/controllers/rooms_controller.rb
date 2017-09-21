@@ -30,7 +30,7 @@ class RoomsController < ApplicationController
       end
 
       @photos = @room.photos
-      redirect_to listing_room_path(@room), notice: "Saved..."
+      redirect_to user_room_path(@room), notice: "Saved..."
     else
       render :new
     end
