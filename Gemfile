@@ -14,32 +14,29 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
-gem 'devise', '~> 3'
+gem 'devise'
+gem 'toastr-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'figaro'
-gem 'toastr-rails'
 gem 'paperclip', '4.3.6'
-gem 'geocoder'
-gem 'private_pub'
-gem 'thin'
-gem "font-awesome-rails"
-gem 'faye-websocket'
-gem "ransack"
-gem 'jquery-ui-rails'
 gem 'aws-sdk', '< 2.0'
+gem 'geocoder'
+gem 'jquery-ui-rails'
+gem 'private_pub'
+gem 'ransack'
+gem 'thin'
+
+gem 'figaro'
+gem 'font-awesome-rails'
 gem 'railties', '~> 4.2', '>= 4.2.6'
 gem 'stripe'
 
 group :development, :development do
-  gem 'sqlite3', '1.3.13'
   gem 'byebug', '>= 4.2.6'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'bcrypt'
+  gem 'sqlite3'
 end
-
-gem 'tzinfo-data'
 
 group :production do
 	gem 'pg'
