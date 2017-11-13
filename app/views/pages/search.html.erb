@@ -60,13 +60,13 @@
           
           <div class="row">
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Single Occupancy (Entire)
+              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Single Occupancy
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy (Entire)
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite Style (Entire)
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite/Penthouse Style
             </div>
             <div class="col-md-4">
               <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy (Shared/Roommate)
@@ -169,7 +169,7 @@
 <script>
   $(function() {
     $("#start_date").datepicker({
-      dateFormat: 'mm-dd-yy',
+      dateFormat: 'dd-mm-yy',
       minDate: 0,
       maxDate: '3m',
       onSelect: function(selected) {
@@ -178,7 +178,7 @@
       }
     });
     $("#end_date").datepicker({
-      dateFormat: 'mm-dd-yy',
+      dateFormat: 'dd-mm-yy',
       minDate: 0,
       maxDate: '3m',
       onSelect: function(selected) {

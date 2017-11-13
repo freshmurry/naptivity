@@ -30,6 +30,7 @@ gem 'figaro'
 gem 'font-awesome-rails'
 gem 'railties', '~> 4.2', '>= 4.2.6'
 gem 'stripe'
+gem 'redis'
 
 group :development, :development do
   gem 'byebug', '>= 4.2.6'
