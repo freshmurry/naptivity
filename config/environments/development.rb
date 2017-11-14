@@ -44,10 +44,10 @@ Rails.application.configure do
     storage: :s3,
     s3_host_name: "s3-#{ENV['s3-us-east-2']}.amazonaws.com",
     s3_credentials: {
-      :bucket => ENV['S3_BUCKET'],
+      :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET'],
-      s3_region: ENV.fetch('us-east-2'),
+      s3_region: ENV['us-east-2']
     }
   }
 
