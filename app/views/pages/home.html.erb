@@ -75,14 +75,18 @@
 		
 		<div class="col-md-4">
 			<div class="panel panel-default">
+				<div class="price-box-wrapper">
+        <span>$<%= room.price %> /day</span>
+      </div>
 				<div class="panel-heading preview">
 					<%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+					<div class="box-wrapper">
+          	<span><%= room.room_type %> &nbsp; <div class="fa fa-users"></div> <%= room.accommodate %></span>
+        	</div>
 				</div>
 				<div class="panel-body">
 					<%= image_tag avatar_url(room.user), class: "img-circle avatar-small" %>&nbsp;
-					<%= link_to room.listing_name, room %><hr>
-					$<%= room.price %>/Night | 
-					<%= room.room_type %> Room
+					<%= link_to room.listing_name, room %>
 				</div>
 			</div>
 		</div>

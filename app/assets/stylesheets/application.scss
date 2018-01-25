@@ -272,6 +272,24 @@ input[type="checkbox"]:checked:before {
   margin:0 auto;
 }
 
+div.price-box-wrapper {
+  position: absolute;
+  padding: 4px 8px;
+  color: #fff;
+  background-color: rgba(0,0,0,.5);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+div.box-wrapper {
+  padding: 4px 8px;
+  color: #fff;
+  background-color: rgba(0,0,0,.5);
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 200;
+}
+
 #sidebar {
   float:right;
   width:340px;
