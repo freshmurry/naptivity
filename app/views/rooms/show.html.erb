@@ -1,6 +1,5 @@
 <div class="panel panel-default">
   <div class="panel-body">
-
     <!-- Image -->
     <div class="row">
       <div class="col-md-12">
@@ -16,11 +15,13 @@
         <div class="row">
           <div class="col-md-3 text-center">
             <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %><br><br>
-            <a><%= link_to @room.user.fullname %></a>
+            <%= link_to user_path(@room.user) do %>
+            <%= @room.user.fullname %>
+            <% end %>
           </div>
 
           <div class="col-md-9">
-            <h4><%= @room.listing_name %></h4>
+            <h2><%= @room.listing_name %></h2>
             <%= @room.address %>
             <hr style="color:red"></hr>
             <div class="row text-center row-space-1">
@@ -65,7 +66,7 @@
     <!-- About -->
     <div class="row">
       <div class="col-md-12">
-        <h2>About This Listing</h2>
+        <h3>About This Listing</h3>
         <p><%= @room.summary %></p>
       </div>
     </div>
