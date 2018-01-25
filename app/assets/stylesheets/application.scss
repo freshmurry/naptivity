@@ -57,6 +57,18 @@ body {
   margin-top: 10px; 
 }
 
+.btn:hover, .btn:focus {
+  color: #fff;
+}
+
+.btn.btn-form.btn-small {
+  border: 1px solid #34495E;
+  background-color: #34495E;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
 .panel-default .panel-heading {
   color: #565a5c;
   background-color: #edefed;

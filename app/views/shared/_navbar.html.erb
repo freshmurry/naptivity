@@ -26,15 +26,13 @@
         <% else %>
           <li>
             <%= link_to conversations_path do %>
-              <i class="fa fa-envelope-o"></i> Messages
+              <i class="fa fa-envelope fa-2x"></i>
             <% end %>
           </li>
           
           <li>
-            <button class="btn btn-form btn-small" class="form-inline pull-xs-right">
-              <%= link_to new_room_path do %>
-                <i class="fa fa-hotel fa-lg"></i> List Your Dorm Room
-              <% end %>
+            <button class="btn btn-form btn-small">
+              <%= link_to "Host Your Dorm Room", new_room_path, style: "color: white; text-decoration: none;" %>
             </button>
           </li>
           
