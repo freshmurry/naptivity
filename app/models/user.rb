@@ -16,13 +16,13 @@ class User < ActiveRecord::Base
     if user
       return user
     else
-      where(provider: auth.provider, uid: auth.uid).first_or_create do |u|
-        u.fullname = auth.info.name
-        u.provider = auth.provider
-        u.uid = auth.uid
-        u.email = auth.info.email
-        u.image = auth.info.image
-        u.password = Devise.friendly_token[0, 20]
+      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+        user.fullname = auth.info.name
+        user.provider = auth.provider
+        user.uid = auth.uid
+        user.email = auth.info.email
+        user.image = auth.info.image
+        user.password = Devise.friendly_token[0, 20]
       end
     end
   end
