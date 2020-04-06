@@ -3,17 +3,58 @@
 @import "toastr";
 @import "font-awesome";
 
-body {  
+body {
+  
   color: #565a5c;
-  background-color: #F8F8F8;
+  background-color: #FFF;
+  font-family: "Varela Round", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding-bottom: 200px;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+  -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .container {
 	width: 80%;
 }
 
+.container h3 {
+  margin-right: -40px;
+  margin-left: -40px;
+}
+
+// div.panel-body {
+//   margin-right: -55px;
+//   margin-left: -55px;
+// }
+
+// .row {
+//   margin-right: -55px;
+//   margin-left: -55px;
+// }
+
 .navbar-default {
   background-color: #FFFFFF;
+}
+
+.navbar-default.static-top {
+  -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.navbar-default .navbar-brand {
+  color: #2C3E50;
+  font-size: 2.5em;
+  font-weight: bold; 
+  font-family: Helvetica;
+  margin-top: 5px;
 }
 
 .navbar button {
@@ -322,4 +363,18 @@ div.box-wrapper {
   color: #fff;
   vertical-align: middle;
   display: table-cell;
+}
+
+//FOOTER//
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100;
+    background-color: #f5f5f5;
+}
+
+.container .text-muted {
+    margin: 20px 0;
 }

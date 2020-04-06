@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+  get 'about' => 'pages#about' #creates about_path
+
 
   devise_for :users,
              :path => '',
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
              :controllers => {:omniauth_callbacks => 'omniauth_callbacks',
                               :registrations => 'registrations'
                              }
-
+  
   resources :users, only: [:show]
   resources :rooms
   resources :photos

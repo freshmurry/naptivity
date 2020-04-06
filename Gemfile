@@ -37,7 +37,7 @@ group :development, :development do
   gem "capistrano", "~> 3.9"
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.13'
 end
 
 group :production do

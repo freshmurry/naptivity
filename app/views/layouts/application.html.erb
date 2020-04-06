@@ -2,62 +2,64 @@
 <html>
 	<head>
 	 	<title>Naptivity | Book a stay in a College Dorm</title>
-	 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-	  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    	<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
-    	<%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-    	<%= csrf_meta_tags %>
+	 	 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+    <%= csrf_meta_tags %>
     	
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-    	<meta name="author" content="Lawrence Murry">
-    	<meta name="keywords" content="Chicago dorms, Chicago dorms near me, chicago dorm housing, Chicago dorms, dorms rooms near me, Illinois dorm housing">
-    	<meta name="description" content="Visiting another college for the weekend? Rent a on-campus dorm room at major colleges and universities near you" />
-      <meta name="author" content="Lawrence Murry" />
-      <meta name="google-site-verification" content="DO0yqvdoS6_M3JZwnZVhczIRYC58JLcZiIw0CYR7tUI" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Lawrence Murry">
+    <meta name="keywords" content="Chicago dorms, Chicago dorms near me, chicago dorm housing, Chicago dorms, dorms rooms near me, Illinois dorm housing">
+    <meta name="description" content="Visiting another college for the weekend? Rent a on-campus dorm room at major colleges and universities near you" />
+    <meta name="author" content="Lawrence Murry" />
+    <meta name="google-site-verification" content="DO0yqvdoS6_M3JZwnZVhczIRYC58JLcZiIw0CYR7tUI" />
       
-      <meta property="og:site_name" content="Naptivity" />
-      <meta property="og:url" content="https://naptivity.herokuapp.com" />
-      <meta property="og:title" content="Book a stay in a College Dorm | Host or Book Today!" />
-      <meta property="og:description" content="Naptivity is a Dormitory Booking site where college students can host their dorm room or book a dorm room
+    <meta property="og:site_name" content="Naptivity" />
+    <meta property="og:url" content="https://naptivity.herokuapp.com" />
+    <meta property="og:title" content="Book a stay in a College Dorm | Host or Book Today!" />
+    <meta property="og:description" content="Naptivity is a Dormitory Booking site where college students can host their dorm room or book a dorm room
       accommodation while visiting other colleges" />
-      <meta property="og:type" content="website"/>
-      <meta property="og:locale" content="en_US" />
-      <meta property="og:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg" />
-      <meta name="twitter:card" content="summary" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg" />
+    <meta name="twitter:card" content="summary" />
       
-      <meta name="twitter:url" content="https://naptivity.herokuapp.com">
-      <meta name="twitter:title" content="Naptivity is a Dormitory Booking site where college students can host their dorm room or book a dorm room
+    <meta name="twitter:url" content="https://naptivity.herokuapp.com">
+    <meta name="twitter:title" content="Naptivity is a Dormitory Booking site where college students can host their dorm room or book a dorm room
       accommodation while visiting other colleges" />
-      <meta name="twitter:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg" />
-      <meta property="og:title" content="Book a stay in a College Dorm | Host or Book Today!"/>
-      <meta name="twitter:site" content="@booknaptivity" />
+    <meta name="twitter:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg" />
+    <meta property="og:title" content="Book a stay in a College Dorm | Host or Book Today!"/>
+    <meta name="twitter:site" content="@booknaptivity" />
       
-      <meta property="og:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg"/>
-      <meta property="og:description" content="New Dorm Rental Website - Naptivity. Host your dorm room or book a stay on campus' around the world!"/>
-      <meta property="og:url" content="https://naptivity.herokuapp.com" />
-      <meta name="p:domain_verify" content="df64a1f43b29d4acb9684604c198f71c"/>
-    </head>
+    <meta property="og:image" content="http://www.lovethispic.com/uploaded_images/141816-Dorm-Room-Idea.jpg"/>
+    <meta property="og:description" content="New Dorm Rental Website - Naptivity. Host your dorm room or book a stay on campus' around the world!"/>
+    <meta property="og:url" content="https://naptivity.herokuapp.com" />
+    <meta name="p:domain_verify" content="df64a1f43b29d4acb9684604c198f71c"/>
+  </head>
     
-    <body>
+  <body>
       
-      <!-- Google Analytics -->
-      <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    <!-- Google Analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       
-        ga('create', 'UA-102175078-1', 'auto');
-        ga('send', 'pageview');
+      ga('create', 'UA-102175078-1', 'auto');
+      ga('send', 'pageview');
       
-      </script>
+    </script>
 
-       <%= render "shared/navbar" %>
-       <%= render "shared/message" %>
-        <div class="container">
-        	<%= yield %>
-        </div> <!-- /container -->
+      <%= render "shared/navbar" %>
+      <%= render "shared/message" %>
+      <div class="container">
+      	<%= yield %>
+      </div> <!-- /container -->
+  
+    <%= render "shared/footer" %>
     
-    </body>
+  </body>
 </html>
