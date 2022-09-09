@@ -30,7 +30,7 @@ class RoomsController < ApplicationController
       end
 
       @photos = @room.photos
-      redirect_to edit_room_path(@room), notice: "Saved..."
+      redirect_to room_path(@room), notice: "Saved..."
     else
       render :new
     end
@@ -54,13 +54,21 @@ class RoomsController < ApplicationController
           end
         end
 
-      redirect_to edit_room_path(@room), notice: "Updated..."
+      redirect_to room_path(@room), notice: "Updated..."
       else
         render :edit
       end
     end
   end
+  
+  def destroy
+    @room = Room.find(params[:id])
+    @room.destroy
 
+    # redirect_back(fallback_location: request.referer, notice: "Deleted...!")
+    redirect_to root_path, notice: "Deleted..."
+  end
+  
   private
     def set_room
       @room = Room.find(params[:id])

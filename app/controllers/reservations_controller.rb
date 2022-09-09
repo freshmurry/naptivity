@@ -27,15 +27,15 @@ class ReservationsController < ApplicationController
 
       # send request to PayPal
       values = {
-        business: 'weng8916-facilitator@gmail.com',
+        business: 'lawrencemurry15@gmail.com',
         cmd: '_xclick',
         upload: 1,
-        notify_url: 'http://airalien.xyz/notify',
+        notify_url: 'http://naptivity.herokuapp.com/notify',
         amount: @reservation.total,
         item_name: @reservation.room.listing_name,
         item_number: @reservation.id,
         quantity: '1',
-        return: 'http://airalien.xyz/your_trips' #'http://########.ngrok.io/your_trips'
+        return: 'http:/naptivity.herokuapp.com/your_trips' #'http://########.ngrok.io/your_trips'
       }
 
       redirect_to "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query

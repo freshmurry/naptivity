@@ -18,11 +18,11 @@
           <%= f.check_box :remember_me %> Remember Me
         </div>
       <% end %>
-
+      <br>
       <div class="actions">
         <%= f.submit "Log in", :class => "btn btn-primary" %>
         <%= link_to "Forgot Password", new_user_password_path, :class => "btn btn-primary" %>
-        <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
+        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path(:facebook), class: "btn btn-primary" %>
       </div>
     <% end %>
   </div>
