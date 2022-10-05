@@ -1,39 +1,7 @@
 <!-- Image -->
 <div class="row">
-  <div class="row">
-    <div class="col-md-12">
-  
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <% if @photos %>
-          <ol class="carousel-indicators">
-            <% @photos.each do |photo| %>
-              <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
-            <% end %>
-          </ol>
-        <% end %>
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <% if @photos %>
-            <% @photos.each do |photo| %>
-              <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-                <%= image_tag photo.image.url() %>
-              </div>
-            <% end %>
-          <% end %>
-        </div>
-  
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
+  <div class="col-md-12"> 
+    <%= image_tag @photos[0].image.url(), width: "100%" %>
   </div>
 </div>
 
@@ -52,7 +20,7 @@
       </div>
 
       <div class="col-md-9">
-        <h1><%= @room.listing_name %></h1>
+        <h2><%= @room.listing_name %></h2>
         <%= @room.address %>
         <hr style="color:red"></hr>
       </div>
@@ -74,10 +42,10 @@
           </div>
       
           <div class="row text-center">
-            <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.room_type %></div>
+            <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.dorm_type %></div>
             <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.accommodate %> <%= @room.accommodate > 1? "Guests" : "Guest" %></div>
             <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.bed_room %> <%= @room.bed_room > 1? "Beds" : "Beds" %></div>
-            <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.bath_room %> <%= @room.bath_room > 1? "Baths" : "Bath" %></div>
+            <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.bath_room %> <%= @room.bath_room > 1? "Bathrooms" : "Bathroom" %></div>
           </div>
         </div>
         
@@ -90,8 +58,9 @@
         <p><%= @room.summary %></p>
       </div>
     </div>
+      
+    <br>
     <hr>
-    
     <!-- Amenities -->
     <div class="row">
       <div class="col-md-2">
@@ -110,17 +79,64 @@
             <ul class="amenities">
               <li class="<%= 'text-line-through' if !@room.is_heating %>">Heating</li>
               <li class="<%= 'text-line-through' if !@room.is_air %>">Air Conditioning</li>
+              <li class="<%= 'text-line-through' if !@room.is_fridge %>">Fridge</li>
             </UL>
+          </div>
+          <div class="col-sm-4 col-md-4">
+            <ul class="amenities">
+              <li class="<%= 'text-line-through' if !@room.is_laundry %>">Laundry Facility</li>
+              <li class="<%= 'text-line-through' if !@room.is_beer %>">Free Beer</li>
+              <li class="<%= 'text-line-through' if !@room.is_wifi %>">Guest Wifi Access</li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
+  
+    <!-- Carousel -->
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+  
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <% if @photos %>
+            <ol class="carousel-indicators">
+              <% @photos.each do |photo| %>
+                <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
+              <% end %>
+            </ol>
+          <% end %>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <% if @photos %>
+              <% @photos.each do |photo| %>
+                <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+                  <%= image_tag photo.image.url() %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+  
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+  
+      </div>
+    </div>
+  
+    <br>
     <hr>
   
     <!-- Reviews -->
-    <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3><br>
-      <h2>Leave a Review</h2><%= render 'reviews/form' if @booked && !@hasReview %>
-    
+    <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>
+      <%= render 'reviews/form' if @booked && !@hasReview %>
     <div>
       <%= render 'reviews/list' %>
     </div>
@@ -167,7 +183,7 @@
       <div class="col-md-4">
         <div class="panel panel-default">
           <div class="panel-heading preview">
-            <%= image_tag room.photos[0].image.url(:medium) if room.photos.length > 0 %>
+            <%= image_tag room.photos[0].image.url(:medium) %>
           </div>
           <div class="panel-body">
             <%= link_to room.listing_name, room %><br>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   root 'pages#home'
+  get 'about' => 'pages#about' #creates about_path
+
 
   devise_for :users,
              :path => '',
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
              :controllers => {:omniauth_callbacks => 'omniauth_callbacks',
                               :registrations => 'registrations'
                              }
-
+  
   resources :users, only: [:show]
   resources :rooms
   resources :photos
@@ -17,9 +19,6 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create]
   end
 
-  resources :conversations, only: [:index, :create] do
-    resources :messages, only: [:index, :create]
-  end
 
   resources :rooms do
     resources :reviews, only: [:create, :destroy]
@@ -35,4 +34,9 @@ Rails.application.routes.draw do
   post '/your_trips' => 'reservations#your_trips'
 
   get '/search' => 'pages#search'
+
+  resources :conversations, only: [:index, :create]  do		
+     resources :messages, only: [:index, :create]
+   end
+   
 end

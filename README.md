@@ -1,3 +1,4 @@
+This is my AirBnB Clone project base off of what I learned in Code4Startup.
 #Online reservation tool for booking accommodations with Ruby on Rails
 Online reservation tool for frequent travelers to quickly find and book nightly accommodations in their destination city.
 
@@ -38,4 +39,3 @@ $ cd AirAlien
 $ bundle install
 $ rake db:create db:migrate
 $ rails s
-```

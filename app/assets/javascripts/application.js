@@ -13,7 +13,13 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require jquery-ui/datepicker
 //= require toastr
 //= require private_pub
 //= require_tree .
+=======
+//= require jquery-ui/widgets/datepicker
+//= require toastr
+//= require_tree .
+>>>>>>> 4f53462e1b82b8b17a77f6b4e8a01439d3721d53

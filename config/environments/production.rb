@@ -1,4 +1,6 @@
 Rails.application.configure do
+  # Settings specified here will take precedence over those in config/application.rb.
+
   # Sets paperclip to upload images to Amazon S3
   config.paperclip_defaults = {
     storage: :s3,
@@ -10,9 +12,7 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
-
-  # Settings specified here will take precedence over those in config/application.rb.
-
+  
   # Code is not reloaded between requests.
   config.cache_classes = true
 

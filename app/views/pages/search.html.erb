@@ -1,17 +1,22 @@
+<div id="container">
+  <div class="row">
+    <h1><h1>
+  </div>
+</div>
+
 <div id="wrapper">
 
   <div id="sidebar">
     <div id="widget" class="sticky">
-      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAYa7lGIhr1oTJwbCxJDrujV1ds6-9L3U"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBiSSi9tViV1i8wH_mTYffgwS0vXFK-NaQ"></script>
       <script>
         function initialize() {
           var mapCanvas = document.getElementById('widget');
-
           var mapOptions = {
             <% if @arrRooms.length > 0 %>
               center: new google.maps.LatLng(<%= @arrRooms[0].latitude %>, <%= @arrRooms[0].longitude %>),
             <% else %>
-              center: new google.maps.LatLng(37.773972, -122.431297),
+              center: new google.maps.LatLng(41.85, -87.64999999999998),
             <% end %>
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -20,13 +25,11 @@
           <% @arrRooms.each do |room| %>
             var marker = new google.maps.Marker({
               position: new google.maps.LatLng(<%= room.latitude %>, <%= room.longitude %>),
-              title: "AirAlien"
+              title: "Naptivity"
             });
-
             marker.setMap(map);
           <% end %>
         }
-
         google.maps.event.addDomListener(window, 'load', initialize);
       </script>
     </div>
@@ -54,16 +57,22 @@
           </div>
 
           <hr>
-
+          
           <div class="row">
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Single Occupancy
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy
             </div>
             <div class="col-md-4">
-              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared Room
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite/Penthouse Style
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Double Occupancy (Shared/Roommate)
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Suite/Penthouse Style (Shared/Roommate)
             </div>
           </div>
 
@@ -79,7 +88,7 @@
 
             <div class="col-md-4">
               <div class="form-group">
-                <label>Bedrooms</label>
+                <label>Beds</label>
                 <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]] %>
               </div>
             </div>
@@ -87,7 +96,7 @@
             <div class="col-md-4">
               <div class="form-group">
                 <label>Bathrooms</label>
-                <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4+", 4]] %>
+                <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3+", 3]] %>
               </div>
             </div>
           </div>
@@ -99,7 +108,7 @@
               <%= check_box_tag "q[is_tv_eq", true %> TV
             </div>
             <div class="col-md-4">
-                <%= check_box_tag "q[is_kitchen_eq", true %> Kitchen
+                <%= check_box_tag "q[is_kitchen_eq", true %> Kitchenette
               </div>
               <div class="col-md-4">
                 <%= check_box_tag "q[is_internet_eq", true %> Internet
@@ -110,6 +119,18 @@
               <div class="col-md-4">
                 <%= check_box_tag "q[is_air_eq", true %> Air Conditioning
               </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_fridge_eq", true %> Fridge
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_laundry_eq", true %> Laundry Facility
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_beer_eq", true %> Free Beer
+              </div>
+              <div class="col-md-4">
+                <%= check_box_tag "q[is_wifi_eq", true %> Free Wifi
+              </div>
           </div>
 
           <hr>
@@ -119,7 +140,7 @@
           </div>
 
         <% end %>
-
+  
         <hr>
 
         <div class="row">
@@ -156,7 +177,10 @@
         $('#end_date').attr('disabled', false);
       }
     });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f53462e1b82b8b17a77f6b4e8a01439d3721d53
     $("#end_date").datepicker({
       dateFormat: 'dd-mm-yy',
       minDate: 0,
@@ -165,13 +189,18 @@
         $('#start_date').datepicker("option", "maxDate", selected);
       }
     });
+<<<<<<< HEAD
 
   })
 
+=======
+  })
+>>>>>>> 4f53462e1b82b8b17a77f6b4e8a01439d3721d53
 </script>
 
 <script>
   $(function(){ // document ready
+<<<<<<< HEAD
 
   if (!!$('.sticky').offset()) { // make sure ".sticky" element exists
 
@@ -181,12 +210,24 @@
 
       var windowTop = $(window).scrollTop(); // returns number
 
+=======
+  if (!!$('.sticky').offset()) { // make sure ".sticky" element exists
+    var stickyTop = $('.sticky').offset().top; // returns number
+    $(window).scroll(function(){ // scroll event
+      var windowTop = $(window).scrollTop(); // returns number
+>>>>>>> 4f53462e1b82b8b17a77f6b4e8a01439d3721d53
       if (stickyTop < windowTop){
         $('.sticky').css({ position: 'fixed', top: 0 });
       }
     });
+<<<<<<< HEAD
 
   }
 
 });
 </script>
+=======
+  }
+});
+</script>
+>>>>>>> 4f53462e1b82b8b17a77f6b4e8a01439d3721d53
