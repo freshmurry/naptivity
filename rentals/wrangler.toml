@@ -1,0 +1,36 @@
+# ===================== SECTION: WORKER CONFIGURATION =====================
+# Naptivity Rentals — production config for Lawrence's Cloudflare account.
+# No secrets live in this file. Set secrets with `wrangler secret put`:
+#   STRIPE_SECRET_KEY        (test-mode key, sk_test_...)
+#   STRIPE_WEBHOOK_SECRET    (whsec_..., optional until webhooks are registered)
+name = "naptivity"
+main = "src/index.js"
+compatibility_date = "2025-01-10"
+workers_dev = true
+
+# ===================== SECTION: BINDINGS =====================
+# OWNER ACTION REQUIRED before deploying to Lawrence's Cloudflare account:
+#   1. wrangler d1 create naptivity-db        -> paste the real ID below
+#      (the placeholder fails closed with D1 error 10181 by design, so the
+#       app can never silently bind to the wrong database)
+#   2. wrangler r2 bucket create naptivity-photos
+[[d1_databases]]
+binding = "DB"
+database_name = "naptivity-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "naptivity-photos"
+
+[ai]
+binding = "AI"
+
+# ===================== SECTION: NON-SECRET VARIABLES =====================
+[vars]
+# Platform fee taken from the host payout, in percent. Renter total is never
+# marked up; the fee is shown openly in every price breakdown.
+PLATFORM_FEE_PCT = "12"
+ADMIN_EMAILS = "lawrencemurry@yahoo.com, lawrence@murryconsultancy.com"
+# Daily Workers AI call budget per user (polish / reply drafts).
+AI_DAILY_LIMIT = "20"

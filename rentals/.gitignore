@@ -1,0 +1,3 @@
+node_modules/
+.wrangler/
+wrangler.deploy-preview.local.toml

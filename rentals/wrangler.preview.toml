@@ -1,0 +1,22 @@
+# ===================== SECTION: PREVIEW CONFIG =====================
+# Used ONLY for `wrangler deploy --temporary` preview builds in environments
+# without Lawrence's Cloudflare credentials. Differences from wrangler.toml:
+# no R2 binding (temporary accounts cannot provision R2 buckets; photo upload
+# degrades gracefully to URL-based photos) — everything else identical.
+name = "naptivity"
+main = "src/index.js"
+compatibility_date = "2025-01-10"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "naptivity-db"
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[ai]
+binding = "AI"
+
+[vars]
+PLATFORM_FEE_PCT = "12"
+ADMIN_EMAILS = "lawrencemurry@yahoo.com, lawrence@murryconsultancy.com"
+AI_DAILY_LIMIT = "20"
